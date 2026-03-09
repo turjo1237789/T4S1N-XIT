@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T4S1N XIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8blp8MW2M9gN8z7w5g8YpY+8fW7P4hA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --bg: #070b16;
+      --card: rgba(12, 18, 35, 0.72);
+      --border: rgba(115, 141, 255, 0.34);
+      --primary: #66e3ff;
+      --secondary: #8b6dff;
+      --text: #e8efff;
+      --muted: #adc0ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 20% 10%, #111f4b 0%, transparent 50%),
+        radial-gradient(circle at 80% 90%, #260f4e 0%, transparent 45%), var(--bg);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .container {
+      width: min(1000px, 92vw);
+      margin: 3rem auto 2rem;
+      z-index: 1;
+      position: relative;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+      padding: clamp(1.3rem, 2.8vw, 2.3rem);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03), 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .glow { animation: pulse 4.5s ease-in-out infinite; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 20px 40px rgba(0,0,0,.35), 0 0 40px rgba(102,227,255,.18); }
+      50% { box-shadow: 0 25px 45px rgba(0,0,0,.45), 0 0 55px rgba(139,109,255,.2); }
+    }
+
+    .tag {
+      margin: 0 0 .6rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      background: linear-gradient(120deg, #e5f4ff, #72d2ff 45%, #bb8fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle { margin-top: 0.6rem; color: var(--muted); }
+
+    .social-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .social-btn {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid rgba(140, 162, 255, 0.35);
+      background: linear-gradient(150deg, rgba(27,38,77,0.8), rgba(18,22,48,0.8));
+      border-radius: 16px;
+      padding: 1rem;
+      display: grid;
+      gap: .35rem;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .social-btn i { font-size: 1.4rem; color: var(--primary); }
+    .social-btn span { font-weight: 700; }
+
+    .social-btn em {
+      font-style: normal;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(102,227,255,.85);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35), 0 0 24px rgba(102,227,255,.2);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      font-size: clamp(1.3rem, 2.2vw, 2rem);
+    }
+
+    .intro p {
+      color: #d4ddff;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1.2rem;
+      text-align: center;
+      font-weight: 700;
+      color: #d7e2ff;
+      letter-spacing: .03em;
+      z-index: 1;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <main class="container">
+    <section class="hero card glow">
+      <p class="tag">Official Hub</p>
+      <h1>T4S1N XIT</h1>
+      <p class="subtitle">Connect with my community across all platforms.</p>
+
+      <div class="social-grid">
+        <a class="social-btn" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page">
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>Facebook Page</span>
+          <em>Join</em>
+        </a>
+        <a class="social-btn" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube Channel</span>
+          <em>Subscribe</em>
+        </a>
+        <a class="social-btn" href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok Account">
+          <i class="fa-brands fa-tiktok"></i>
+          <span>TikTok Account</span>
+          <em>Follow</em>
+        </a>
+        <a class="social-btn" href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Discord Server">
+          <i class="fa-brands fa-discord"></i>
+          <span>Discord Server</span>
+          <em>Join</em>
+        </a>
+      </div>
+    </section>
+
+    <section class="intro card">
+      <h2>Software Engineering Introduction</h2>
+      <p>
+        Software engineering is the art of building reliable, scalable, and user-friendly digital products.
+        It combines programming, architecture, testing, and collaboration to transform ideas into real-world solutions.
+      </p>
+      <p>
+        From frontend interfaces to backend systems, software engineering ensures every component works smoothly.
+        Great engineers focus on clean code, performance, security, and long-term maintainability.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &lt;/&gt; DEVELOPED WITH ❤️‍🩹 &amp; CARE BY T4S1N
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load({
+      id: 'particles-js',
+      options: {
+        background: { color: 'transparent' },
+        fpsLimit: 120,
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: 'repulse' },
+            resize: { enable: true }
+          },
+          modes: {
+            repulse: {
+              distance: 120,
+              duration: 0.4
+            }
+          }
+        },
+        particles: {
+          color: { value: ['#66e3ff', '#8b6dff', '#ffffff'] },
+          links: {
+            color: '#6f8dff',
+            distance: 130,
+            enable: true,
+            opacity: 0.35,
+            width: 1
+          },
+          move: {
+            direction: 'none',
+            enable: true,
+            outModes: { default: 'bounce' },
+            random: false,
+            speed: 1.25,
+            straight: false
+          },
+          number: {
+            density: { enable: true, area: 900 },
+            value: 70
+          },
+          opacity: { value: 0.55 },
+          shape: { type: 'circle' },
+          size: { value: { min: 1, max: 4 } }
+        },
+        detectRetina: true
+      }
+    });
+  </script>
+</body>
+</html>
